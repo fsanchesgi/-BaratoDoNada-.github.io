@@ -18,27 +18,44 @@
       padding: 20px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
     header p {
       color: #94a3b8;
     }
 
     .container {
-      max-width: 500px;
+      max-width: 1200px;
       margin: auto;
-      padding: 10px;
+      padding: 15px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* MOBILE: 2 colunas */
+      gap: 15px;
+    }
+
+    /* TABLET */
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* DESKTOP */
+    @media (min-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
     .card {
       background: #111827;
       border-radius: 16px;
-      padding: 15px;
-      margin: 15px 0;
+      padding: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
     }
 
     .card img {
@@ -47,30 +64,27 @@
     }
 
     .title {
-      font-size: 16px;
-      margin: 10px 0;
+      font-size: 14px;
+      margin: 8px 0;
+      min-height: 40px;
     }
 
     .price {
       color: #22c55e;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
     }
 
     .btn {
       display: block;
-      margin-top: 10px;
-      padding: 12px;
+      margin-top: 8px;
+      padding: 10px;
       background: #22c55e;
       color: black;
       text-decoration: none;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: bold;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #16a34a;
+      font-size: 14px;
     }
 
     footer {
@@ -84,7 +98,7 @@
 <body>
 
 <header>
-  <img src="Image_fx (2).png" alt="BaratoDoNada" width="150" class="logo">
+  <img src="Image_fx (2).png" width="140">
   <p>Achados que aparecem do nada</p>
 </header>
 
@@ -92,21 +106,38 @@
 
   <!-- PRODUTO 1 -->
   <div class="card">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744623-MLB103168916862_012026-F-smartwatch-bettdow-fb055-185-esportivo-ia-musica-gps-3atm.webp" alt="Smartwatch Bettdow FB055" style="width:100%; max-width:200px; border-radius:10px;">
-    <div class="title">Smartwatch Bettdow Fb055 1.85 Esportivo Ia Música Gps 3atm</div>
+    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744623-MLB103168916862_012026-F-smartwatch-bettdow-fb055-185-esportivo-ia-musica-gps-3atm.webp">
+    <div class="title">Smartwatch Bettdow FB055 1.85 GPS</div>
     <div class="price">💰 R$ 379,05</div>
     <a class="btn" href="https://meli.la/2zi8jqY" target="_blank">👉 Ver Oferta</a>
   </div>
 
   <!-- PRODUTO 2 -->
   <div class="card">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_894347-MLB84393361003_052025-F-calca-masculina-com-elastano-esportiva-fitness-slim-fit.webp" alt="Calça Masculina Com Elastano Esportiva Fitness Slim Fit" style="width:100%; max-width:200px; border-radius:10px;">
-    <div class="title">Calça Masculina Com Elastano Esportiva Fitness Slim Fit</div>
+    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_894347-MLB84393361003_052025-F-calca-masculina-com-elastano-esportiva-fitness-slim-fit.webp">
+    <div class="title">Calça Masculina Fitness Slim</div>
     <div class="price">💰 R$ 47,43</div>
     <a class="btn" href="https://meli.la/2V1EqTo" target="_blank">👉 Ver Oferta</a>
   </div>
 
+  <!-- PRODUTO 3 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/519ORvla7aL._AC_SL1000_.jpg">
+    <div class="title">Cadence Kit Click Cadence - Sanduicheira e Cafeteira Single Up - 127V</div>
+    <div class="price">💰 R$ 179,90</div>
+    <a class="btn" href="https://amzn.to/4rKsT30" target="_blank">👉 Ver Oferta</a>
   </div>
+
+  <!-- PRODUTO 3 -->
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/51yyVJUPMWL._AC_SL1200_.jpg">
+    <div class="title">Garrafa Térmica Inox 1l Termolar Lumina - Cor Roxo</div>
+    <div class="price">💰 R$ 99,90</div>
+    <a class="btn" href="https://amzn.to/4dzNG5X" target="_blank">👉 Ver Oferta</a>
+  </div>
+
+
+</div>
 
 <footer>
   © 2026 BaratoDoNada • Ofertas atualizadas diariamente
