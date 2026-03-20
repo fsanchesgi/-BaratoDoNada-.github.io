@@ -1,155 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BaratoDoNada</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BaratoDoNada</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0f172a, #020617);
-      color: white;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: white;
+}
 
-    header {
-      padding: 20px;
-    }
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    header p {
-      color: #94a3b8;
-    }
+.logo {
+  width: 120px;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px;
+.whatsapp-btn {
+  background: #25D366;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
 
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* MOBILE: 2 colunas */
-      gap: 15px;
-    }
+/* GRID */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px;
 
-    /* TABLET */
-    @media (min-width: 768px) {
-      .container {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
 
-    /* DESKTOP */
-    @media (min-width: 1024px) {
-      .container {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+@media (min-width: 768px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-    .card {
-      background: #111827;
-      border-radius: 16px;
-      padding: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      transition: 0.2s;
-    }
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-    .card:hover {
-      transform: scale(1.03);
-    }
+/* CARD */
+.card {
+  background: #111827;
+  border-radius: 16px;
+  padding: 10px;
+  position: relative;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 12px;
-    }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-    .title {
-      font-size: 14px;
-      margin: 8px 0;
-      min-height: 40px;
-    }
+/* BADGE DESCONTO */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
 
-    .price {
-      color: #22c55e;
-      font-size: 16px;
-      font-weight: bold;
-    }
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
 
-    .btn {
-      display: block;
-      margin-top: 8px;
-      padding: 10px;
-      background: #22c55e;
-      color: black;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
-    }
+.title {
+  font-size: 14px;
+  margin: 8px 0;
+  min-height: 40px;
+}
 
-    footer {
-      margin: 30px 0;
-      font-size: 12px;
-      color: #64748b;
-    }
-  </style>
+.price {
+  color: #22c55e;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* BOTÃO */
+.btn {
+  display: block;
+  margin-top: 8px;
+  padding: 10px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* BOTÃO FIXO WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #64748b;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <img src="Image_fx (2).png" width="140">
-  <p>Achados que aparecem do nada</p>
+  <img src="Image_fx (2).png" class="logo">
+  <a class="whatsapp-btn" href="https://chat.whatsapp.com/BCpIhkF5st78qD5NVXONjk" target="_blank">
+    🔥 Entrar no Grupo
+  </a>
 </header>
 
 <div class="container">
 
-  <!-- PRODUTO 1 -->
   <div class="card">
+    <div class="badge">-62% OFF</div>
     <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744623-MLB103168916862_012026-F-smartwatch-bettdow-fb055-185-esportivo-ia-musica-gps-3atm.webp">
-    <div class="title">Smartwatch Bettdow FB055 1.85 GPS</div>
+    <div class="title">Smartwatch Bettdow FB055 GPS</div>
     <div class="price">💰 R$ 379,05</div>
-    <a class="btn" href="https://meli.la/2zi8jqY" target="_blank">👉 Ver Oferta</a>
+    <a class="btn" href="https://meli.la/2zi8jqY" target="_blank">Ver Oferta</a>
   </div>
 
-  <!-- PRODUTO 2 -->
   <div class="card">
+    <div class="badge">-39% OFF</div>
     <img src="https://http2.mlstatic.com/D_NQ_NP_2X_894347-MLB84393361003_052025-F-calca-masculina-com-elastano-esportiva-fitness-slim-fit.webp">
     <div class="title">Calça Masculina Fitness Slim</div>
     <div class="price">💰 R$ 47,43</div>
-    <a class="btn" href="https://meli.la/2V1EqTo" target="_blank">👉 Ver Oferta</a>
+    <a class="btn" href="https://meli.la/2V1EqTo" target="_blank">Ver Oferta</a>
   </div>
 
-  <!-- PRODUTO 3 -->
   <div class="card">
+    <div class="badge">-41% OFF</div>
     <img src="https://m.media-amazon.com/images/I/519ORvla7aL._AC_SL1000_.jpg">
-    <div class="title">Cadence Kit Click Cadence - Sanduicheira e Cafeteira Single Up - 127V</div>
-    <div class="price">💰 R$ 179,90</div>
-    <a class="btn" href="https://amzn.to/4rKsT30" target="_blank">👉 Ver Oferta</a>
+    <div class="title">Sanduicheira + Cafeteira Cadence</div>
+    <div class="price">💰 R$ 153,00</div>
+    <a class="btn" href="https://amzn.to/4rKsT30" target="_blank">Ver Oferta</a>
   </div>
 
-  <!-- PRODUTO 4 -->
   <div class="card">
+    <div class="badge">-43%OFF</div>
     <img src="https://m.media-amazon.com/images/I/51yyVJUPMWL._AC_SL1200_.jpg">
-    <div class="title">Garrafa Térmica Inox 1l Termolar Lumina - Cor Roxo</div>
+    <div class="title">Garrafa Térmica Inox 1L</div>
     <div class="price">💰 R$ 99,90</div>
-    <a class="btn" href="https://amzn.to/4dzNG5X" target="_blank">👉 Ver Oferta</a>
+    <a class="btn" href="https://amzn.to/40G389d" target="_blank">Ver Oferta</a>
   </div>
 
-    <!-- PRODUTO 5 -->
   <div class="card">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_690159-MLA99542831560_122025-F.webp">
-    <div class="title">Smart TV AIWA 32” Android HD Borda Ultrafina HDR10 Dolby Áudio AWS-TV-32-BL-02-A</div>
-    <div class="price">💰 R$ 813,83</div>
-    <a class="btn" href="https://meli.la/1YxoybV" target="_blank">👉 Ver Oferta</a>
-  </div>
-
-   <!-- PRODUTO 6 -->
-  <div class="card">
+    <div class="badge">TOP</div>
     <img src="https://m.media-amazon.com/images/I/71ZQEpIjbBL._AC_SL1500_.jpg">
     <div class="title">BILLY & JACK Molho Original Billy & Jack 200 Gramas</div>
     <div class="price">💰 R$ 8,37</div>
-    <a class="btn" href="https://amzn.to/4bTrhzg" target="_blank">👉 Ver Oferta</a>
+    <a class="btn" href="https://amzn.to/4lHrRmX" target="_blank">Ver Oferta</a>
   </div>
 
 </div>
@@ -157,6 +201,11 @@
 <footer>
   © 2026 BaratoDoNada • Ofertas atualizadas diariamente
 </footer>
+
+<!-- BOTÃO FIXO -->
+<a class="whatsapp-float" href="https://chat.whatsapp.com/SEULINK" target="_blank">
+  💬
+</a>
 
 </body>
 </html>
